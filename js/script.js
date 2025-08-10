@@ -37,17 +37,27 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 document.addEventListener('DOMContentLoaded', () => {
-    const langWrapper = document.querySelector('.header__lang');
-    const langSelected = document.querySelector('.header__lang-selected');
+    const langWrappers = document.querySelectorAll('.header__lang');
+    langWrappers.forEach(langWrapper => {
+    const langSelected = langWrapper.querySelector('.header__lang-selected');
     langSelected.addEventListener('click', (e) => {
         e.stopPropagation();
+        langWrappers.forEach(wrapper => {
+        if (wrapper !== langWrapper) {
+            wrapper.classList.remove('active');
+        }
+        });
         langWrapper.classList.toggle('active');
     });
-    document.addEventListener('click', (e) => {
-        if (!langWrapper.contains(e.target)) {
-            langWrapper.classList.remove('active');
-        }
     });
+    document.addEventListener('click', (e) => {
+        langWrappers.forEach(langWrapper => {
+            if (!langWrapper.contains(e.target)) {
+            langWrapper.classList.remove('active');
+            }
+        });
+    });
+
 
     const faqItems = document.querySelectorAll('.faq__item');
     faqItems.forEach(item => {
