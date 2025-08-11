@@ -392,7 +392,7 @@ ol.custom-list li::before {
 }
 @media (max-width: 999px) {
     main.main{
-        margin-top: 195px;
+        margin-top: 187px;
     }
     .container{
         max-width: 768px;
@@ -530,12 +530,18 @@ ol.custom-list li::before {
 }
 /* header */
 .header{
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     right: 0;
     z-index: 100;
     background-color: #fff;
+}
+.header.header-scrolled{
+    position: fixed;
+}
+.header.header-scrolled .header__top{
+    display: none;
 }
 .header__top{
     padding: 18px 0;
@@ -596,7 +602,7 @@ ol.custom-list li::before {
     margin-left: auto;
     margin-right: 8px;
 }
-.header__top-inner .header__lang{
+.header__top-inner > .header__lang{
     display: none;
 }
 .header__lang{
@@ -638,9 +644,6 @@ ol.custom-list li::before {
     transition: all .2s ease;
     font-size: 18px;
 }
-.header__lang-content:hover{
-    color: #19B4FF;
-}
 .header__lang:not(.active) .header__lang-content{
     display: none;
 }
@@ -652,26 +655,36 @@ ol.custom-list li::before {
     margin: 0 auto;
     width: 100%;
 }
-.header__menu ul{
+.header__menu > ul{
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 10px;
 }
-.header__menu ul li{
+.header__menu > ul > li{
     display: flex;
     align-items: center;
+    position: relative;
 }
-.header__menu ul li a{
+.header__menu-more{
+    gap: 10px;
+}
+.header__menu-more svg path{
+    transition: all .2s ease;
+}
+.header__menu-more,
+.header__menu > ul > li > a{
     color: #00070E;
     font-size: 18px;
     line-height: normal;
+    font-weight: 400;
     position: relative;
     padding: 27px 8px 29px;
     transition: all .2s ease;
     text-align: center;
 }
-.header__menu ul li a::after{
+.header__menu-more::after,
+.header__menu > ul > li > a::after{
     content: '';
     position: absolute;
     left: 0;
@@ -682,13 +695,29 @@ ol.custom-list li::before {
     background-color: #19B4FF;
     opacity: 0;
 }
-.header__menu ul li a:hover::after,
-.header__menu ul li a.active::after{
+.header__menu > ul > li > a.active::after{
     opacity: 1;
 }
-.header__menu ul li a:hover,
-.header__menu ul li a.active{
+.header__menu > ul > li > a.active{
     color: #19B4FF;
+}
+.header__menu-list{
+    position: absolute;
+    left: 0;
+    top: 100%;
+    left: -20px;
+    background-color: #fff;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: max-content;
+    display: none;
+    overflow: auto;
+    max-height: 70vh;
+}
+.header__menu-list li a{
+    transition: all .2s ease;
 }
 .header__burger,
 .header__bottom-close{
@@ -716,11 +745,42 @@ ol.custom-list li::before {
     .header__name br{
         display: none;
     }
-    .header__menu ul li a{
+    .header__menu > ul > li >  a{
         padding: 27px 5px 29px;
+    }
+    .header__top{
+        padding: 13px 0;
+    }
+}
+@media (min-width: 768px) {
+    .header__menu-list li a:hover{
+        color: #19B4FF;
+    }
+    .header__menu > ul > li:hover .header__menu-list{
+        display: flex;
+    }
+    .header__lang-content:hover{
+        color: #19B4FF;
+    }
+    .header__menu-more:hover svg path{
+        fill: #19B4FF;
+    }
+    .header__menu-more:hover::after,
+    .header__menu > ul > li > a:hover::after{
+        opacity: 1;
+    }
+    .header__menu-more:hover,
+    .header__menu > ul > li > a:hover{
+        color: #19B4FF;
     }
 }
 @media (max-width: 767px) {
+    .header{
+        position: fixed;
+    }
+    .header__top{
+        padding: 18px 0;
+    }
     .header__bottom{
         position: fixed;
         inset: 0;
@@ -748,16 +808,19 @@ ol.custom-list li::before {
         transform: translateX(100%);
         transition: all .3s ease;
     }
-    .header__menu ul{
+    .header__menu > ul{
         flex-direction: column;
     }
-    .header__menu ul li a{
+    .header__menu > ul > li{
+        justify-content: center;
+        width: 100%;
+        flex-direction: column;
+    }
+    .header__menu > ul > li > a{
         padding: 10px;
         max-width: 100%;
         width: 100%;
-    }
-    .header__menu ul li{
-        width: 100%;
+        text-align: left;
     }
     .header__bottom-close{
         display: flex;
@@ -790,12 +853,36 @@ ol.custom-list li::before {
     .header__btn{
         font-size: 16px;
     }
-    .header__top-inner .header__lang{
+    .header__top-inner > .header__lang{
         display: flex;
         margin-left: auto;
     }
     .header__content .header__lang{
         display: none;
+    }
+    .header__menu-more{
+        max-width: 100%;
+        padding: 10px;
+        justify-content: start;
+    }
+    .header__menu-list{
+        position: initial;
+        padding: 0;
+        max-height: none;
+        padding: 20px;
+        width: 100%;
+    }
+    .header__menu-more.show + .header__menu-list{
+        display: flex;
+    }
+    .header__menu-more.show svg{
+        transform: rotate(180deg);
+    }
+    .header__menu-more.show{
+        color: #19B4FF;
+    }
+    .header__menu-more.show svg path{
+        fill: #19B4FF;
     }
 }
 @media (max-width: 479px) {
