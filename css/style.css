@@ -381,7 +381,7 @@ ol.custom-list li::before {
 .custom-list li + li{
     margin-top: 19px;
 }
-@media (max-width: 1367px) {
+@media (max-width: 1440px) {
     .container{
         max-width: 1280px;
     }
@@ -2460,6 +2460,12 @@ ol.custom-list li::before {
     height: 80px;
     margin-top: 28px;
 }
+@media (max-width: 1440px) {
+    .maintenance__content,  
+    .maintenance__left{
+        max-width: 600px;
+    }
+}
 @media (max-width: 1279px) {
     .maintenance__left-title {
         padding: 10px 31px;
@@ -3077,6 +3083,12 @@ ol.custom-list li::before {
 }
 .steps__content-btn{
     max-width: 100%;
+}
+@media (max-width: 1440px) {
+    .steps__content-title{
+        font-size: 34px;
+        line-height: 44px;
+    }
 }
 @media (max-width: 1279px) {
     .steps__content{
