@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="body"> 
@@ -109,7 +110,7 @@
                 </div>
             </div>
             <div class="container">
-                <div class="article__inner">
+                <div class="article__inner" data-aos="fade-up" data-aos-delay="0">
                     <h1 class="article__title">Як виглядає якісний ремонт вікон через 5 років?</h1>
                     <div class="article__banner">
                         <div class="article__banner-top">
@@ -171,8 +172,8 @@
         <section class="information information-bg">
             <div class="container">
                 <div class="information__inner">
-                    <h2 class="information__title title">Останні пости</h2>
-                    <div class="information__block">
+                    <h2 class="information__title title" data-aos="fade-up" data-aos-delay="0">Останні пости</h2>
+                    <div class="information__block" data-aos="fade-up" data-aos-delay="50">
                         <div class="news__item">
                             <a class="news__item-image" href="#">
                                 <img src="img/news/1.png" alt="">
@@ -210,7 +211,7 @@
                             </div>
                         </div>
                     </div>
-                    <a class="information__btn btn-3" href="#">
+                    <a class="information__btn btn-3" href="#" data-aos="fade-up" data-aos-delay="100">
                         Всі статті
                         <svg xmlns="http://www.w3.org/2000/svg" width="15" height="16" viewBox="0 0 15 16" fill="none">
                             <path d="M14.8234 15.3239V0.676758H0.17627V1.62351H13.2078L0.589867 14.2425L1.25873 14.9114L13.8767 2.29237V15.3239H14.8234Z" fill="#222222"/>
@@ -394,6 +395,7 @@
         </div>
     </footer>
 
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/peterhry/CircleType@2.3.1/dist/circletype.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="js/script.js"></script>

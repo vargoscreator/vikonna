@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="body"> 
@@ -107,8 +108,8 @@
             </div>
             <div class="container">
                 <div class="works__inner">
-                    <h1 class="works__title">Наші роботи</h1>
-                    <div class="works__select">
+                    <h1 class="works__title" data-aos="fade-up" data-aos-delay="0">Наші роботи</h1>
+                    <div class="works__select" data-aos="fade-up" data-aos-delay="50">
                         <label>
                             <input type="radio" name="filter-work" value="Всі роботи" checked>
                             <span>Всі роботи</span>
@@ -142,7 +143,7 @@
                             <span>Встановлення <br>вікон</span>
                         </label>
                     </div>
-                    <div class="works__block">
+                    <div class="works__block" data-aos="fade-up" data-aos-delay="100">
                         <div class="works__item">
                             <a class="works__item-image" href="#">
                                 <p class="works__item-name">Герметизація вікон</p>
@@ -408,7 +409,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="works__pages page-inner">
+                    <div class="works__pages page-inner" data-aos="fade-up" data-aos-delay="50">
                         <a class="page-prev" href="#"></a>
                         <div class="page-content">
                             <a class="active" href="#">1</a>
@@ -595,6 +596,7 @@
         </div>
     </footer>
 
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/peterhry/CircleType@2.3.1/dist/circletype.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="js/script.js"></script>

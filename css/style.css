@@ -381,6 +381,11 @@ ol.custom-list li::before {
 .custom-list li + li{
     margin-top: 19px;
 }
+@media (max-width: 1367px) {
+    .container{
+        max-width: 1280px;
+    }
+}
 @media (max-width: 1279px) {
     .container{
         max-width: 1000px;
@@ -463,7 +468,7 @@ ol.custom-list li::before {
         margin-bottom: 15px;
     }
     main.main{
-        margin-top: 87px;
+        margin-top: 61px;
     }
     h1{
         font-size: 40px;
@@ -890,17 +895,24 @@ ol.custom-list li::before {
         font-size: 12px;
     }
     .header__logo{
-        height: 50px;
-        max-width: 160px;
+        height: 40px;
+        max-width: 130px;
+    }
+    .header__top{
+        padding: 10px 0;
     }
     .header__top-inner{
         gap: 20px;
     }
     .header__inner{
-        padding: 60px 20px 40px;
+        padding: 40px 20px 40px;
     }
     .header__content{
         gap: 20px;
+    }
+    .header__bottom-close {
+        top: 18px;
+        right: 19px;
     }
 }
 /* footer */
@@ -1958,19 +1970,19 @@ ol.custom-list li::before {
     position: relative;
     z-index: 1;
 }
-.hero__image{
+.hero__video{
     position: absolute;
     inset: 0;
     z-index: -1;
     width: 100%;
 }
-.hero__image img{
+.hero__video video{
     width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: center;
 }
-.hero__image::after {
+.hero__video::after {
     content: '';
     position: absolute;
     inset: 0;
@@ -2041,16 +2053,6 @@ ol.custom-list li::before {
     font-weight: 600;
     text-transform: uppercase;
 }
-@media (max-width: 1180px) {
-    .hero__image img{
-        width: 120%;
-    }
-}
-@media (max-width: 999px) {
-    .hero__image img{
-        width: 140%;
-    }
-}
 @media (max-width: 767px) {
     .hero__inner{
         padding: 80px 0 160px;
@@ -2064,12 +2066,14 @@ ol.custom-list li::before {
         font-size: 36px;
         line-height: 42px;
     }
-    .hero__image::after {
+    .hero__video::after {
         background: linear-gradient(90deg, #FAFAFA -34%, rgba(255, 255, 255, 0.00) 231.35%);
     }
 }
 @media (max-width: 479px) {
-
+    .hero__inner{
+        padding-top: 50px;
+    }
 }
 /* guarantees */
 .guarantees{

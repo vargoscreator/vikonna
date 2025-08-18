@@ -1,3 +1,9 @@
+if (typeof AOS !== 'undefined' && AOS.init) {
+    AOS.init({
+        once: true,
+        duration: 600,
+    });
+}
 function toggleHeaderScrolled() {
     if (window.scrollY >= 107 && window.innerWidth >= 768) {
         document.querySelector(".header").classList.add("header-scrolled");
@@ -182,7 +188,7 @@ if(document.querySelector('.reviewsPopup')){
     reviewsPopup.addEventListener('click', closePopup);
     const stars = document.querySelectorAll('.reviewsPopup__form-stars label');
     const ratingInput = document.querySelector('.reviewsPopup__form-stars input[name="star"]');
-    let currentRating = 1;
+    let currentRating = 0;
     ratingInput.value = currentRating;
     updateStarColors(currentRating);
     stars.forEach((star, index) => {
@@ -265,7 +271,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 if(document.querySelector('.maintenance__actions')){
-    const endDate = new Date(2025, 7, 16, 18, 0, 0); // 10 серпня 2025, 18:00:00
+    const timer = setInterval(updateCountdown, 1000);
+    const endDate = new Date(2025, 7, 26, 18, 0, 0); // 26 серпня 2025, 18:00:00
     function updateCountdown() {
         const now = new Date();
         const diff = endDate - now;
@@ -292,7 +299,6 @@ if(document.querySelector('.maintenance__actions')){
         document.getElementById('seconds').innerHTML = formatNumber(s).split('').map(n => `<span>${n}</span>`).join('');
     }
     updateCountdown();
-    const timer = setInterval(updateCountdown, 1000);
 }
 
 
@@ -331,6 +337,10 @@ let reviewsSlider = new Swiper(".reviews__slider", {
             slidesPerView: 2,
         },
         1280: {
+            spaceBetween: 30,
+            slidesPerView: 3,
+        },
+        1367: {
             spaceBetween: 30,
             slidesPerView: 4,
         },

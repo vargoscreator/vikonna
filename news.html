@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="body"> 
@@ -107,8 +108,8 @@
             </div>
             <div class="container">
                 <div class="news__inner">
-                    <h1 class="news__title">Новини</h1>
-                    <div class="news__block">
+                    <h1 class="news__title" data-aos="fade-up" data-aos-delay="0">Новини</h1>
+                    <div class="news__block" data-aos="fade-up" data-aos-delay="50">
                         <div class="news__item">
                             <a class="news__item-image" href="#">
                                 <img src="img/news/1.png" alt="">
@@ -254,7 +255,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="news__pages page-inner">
+                    <div class="news__pages page-inner" data-aos="fade-up" data-aos-delay="100">
                         <a class="page-prev" href="#"></a>
                         <div class="page-content">
                             <a class="active" href="#">1</a>
@@ -441,6 +442,7 @@
         </div>
     </footer>
 
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/peterhry/CircleType@2.3.1/dist/circletype.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="js/script.js"></script>
