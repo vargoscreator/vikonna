@@ -728,6 +728,9 @@ ol.custom-list li::before {
 .header__bottom-close{
     display: none;
 }
+.header__mobile-tel{
+    display: none;
+}
 @media (max-width: 1279px) {
     .header__block,
     .header__content{
@@ -858,9 +861,12 @@ ol.custom-list li::before {
     .header__btn{
         font-size: 16px;
     }
+    .header__top-inner{
+        gap: 17px;
+    }
     .header__top-inner > .header__lang{
         display: flex;
-        margin-left: auto;
+        max-width: max-content;
     }
     .header__content .header__lang{
         display: none;
@@ -888,6 +894,11 @@ ol.custom-list li::before {
     }
     .header__menu-more.show svg path{
         fill: #19B4FF;
+    }
+    .header__mobile-tel{
+        display: flex;
+        align-items: center;
+        margin-left: auto;
     }
 }
 @media (max-width: 479px) {
